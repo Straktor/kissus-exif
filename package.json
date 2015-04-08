@@ -1,0 +1,11 @@
+{
+  "name": "kissus-exif",
+  "version": "0.0.0",
+  "description": "Kissus exif merger",
+  "main": "app.js",
+  "repository": "https://github.com/Straktor/kissus-exif.git",
+  "author": "Alexandre Boulay <a.boulay56@gmail.com>",
+  "dependencies": {
+    "moment": "*"
+  }
+}
