@@ -25,7 +25,7 @@ Run at least once to install dependencies
 ```
 $ npm install 
 ```
-To start:
+To start you need to specify the path to the folder that contains the images (.jpg) and the path to the log file:
 ```
-$ node app.js
+$ node app.js -i <imageFolderPath> -l <logFilePath>
 ```

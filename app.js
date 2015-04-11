@@ -1,14 +1,39 @@
 /*jslint node: true */
-var Exif = require('./exif.js'),
+var argv = require('minimist')(process.argv.slice(2)),
+  Exif = require('./exif.js'),
   FsReader = require('./fsReader.js');
 
-var logFilePath = "data/LOG_2015-04-03_21-21-57MPU6515_Accelerometer.log",
-  imageFolderPath = "data",
+var logFilePath,
+  imageFolderPath,
   data,
   imgCnt,
   parsedData = [],
   fsReader = new FsReader(),
   exif = new Exif();
+
+// Parse command line arguments
+if (argv.i) {
+  if (!fsReader.checkIfDirExist(argv.i)) {
+    console.log("Err: Image folder path is not valid (Usage: -i <folderPath>)");
+    process.exit(1);
+  } else {
+    imageFolderPath = argv.i;
+  }
+} else {
+  console.log("Err: No image folder path specified (Usage: -i <folderPath>)");
+  process.exit(1);
+}
+if (argv.l) {
+  if (!fsReader.checkIfFileExist(argv.l)) {
+    console.log("Err: Log file path is not valid (Usage: -l <logFilePath>)");
+    process.exit(1);
+  } else {
+    logFilePath = argv.l;
+  }
+} else {
+  console.log("Err: No log file path specified (Usage: -l <logFilePath>)");
+  process.exit(1);
+}
 
 // Find the array's value closest to the timeValue
 function findClosestTimestamp(timeValue, dataList) {

@@ -70,4 +70,38 @@ FsReader.prototype.readAccelerometerLog = function (filePath) {
   return parsedData;
 };
 
+FsReader.prototype.checkIfDirExist = function (folderPath) {
+  'use strict';
+
+  try {
+    // Query the entry
+    var stats = fs.lstatSync(folderPath);
+
+    // Is it a directory?
+    if (stats.isDirectory()) {
+      return true;
+    }
+  } catch (e) {
+      // ...
+  }
+  return false;
+};
+
+FsReader.prototype.checkIfFileExist = function (filePath) {
+  'use strict';
+
+  try {
+    // Query the entry
+    var stats = fs.lstatSync(filePath);
+
+    // Is it a directory?
+    if (stats.isFile()) {
+      return true;
+    }
+  } catch (e) {
+      // ...
+  }
+  return false;
+};
+
 module.exports = FsReader;

@@ -6,6 +6,7 @@
   "repository": "https://github.com/Straktor/kissus-exif.git",
   "author": "Alexandre Boulay <a.boulay56@gmail.com>",
   "dependencies": {
-    "moment": "*"
+    "moment": "*",
+    "minimist": "*"
   }
 }
