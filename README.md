@@ -5,9 +5,9 @@ KissUS-Exif
 ## Dependencies
 You will need [node.js](http://nodejs.org/).
 
-You will need to download [exiftool.exe](http://www.sno.phy.queensu.ca/~phil/exiftool/index.html) and put it at
+You will need to download [exiftool.exe](http://www.sno.phy.queensu.ca/~phil/exiftool/index.html) and put it in the exiftool folder
 ```
-/kissus-exif/exiftool.exe
+/kissus-exif/exiftool/exiftool.exe
 ```
 
 You will need to put your images (.jpg) and log file in a data folder
